@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dplurl1lffsht"]
+
+[ext_resource type="PackedScene" uid="uid://quotb6ulxa4m" path="res://back_bg.glb" id="1_ndt5i"]
+
+[node name="back_bg" instance=ExtResource("1_ndt5i")]
+
+[node name="Background2" parent="Node3D" index="0"]
+cast_shadow = 0
+lod_bias = 0.001
+gi_mode = 0
