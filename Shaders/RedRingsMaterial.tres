@@ -30,3 +30,4 @@ void fragment() {
 	SPECULAR = specular;
 }
 "
+metadata/_edit_res_path = "res://Shaders/RedRingsMaterial.tres"

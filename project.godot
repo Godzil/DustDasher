@@ -13,7 +13,7 @@ config_version=5
 config/name="SpeedRushDust"
 config/tags=PackedStringArray("gamedev.tv", "3d_course")
 run/main_scene="res://levels/level.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [input]
@@ -43,5 +43,4 @@ rotate_right={
 [rendering]
 
 renderer/rendering_method="mobile"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true

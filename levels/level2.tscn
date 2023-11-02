@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cfajt4jcnhyow"]
 
-[ext_resource type="PackedScene" uid="uid://bwlqwuixwwed8" path="res://Background.tscn" id="1_4vnvx"]
+[ext_resource type="PackedScene" uid="uid://cbe06wgbxkjwy" path="res://Background.tscn" id="1_baner"]
 [ext_resource type="Script" path="res://levels/LandingPad.gd" id="1_mtigf"]
 [ext_resource type="PackedScene" uid="uid://bg8fjxtlk1ud" path="res://player.tscn" id="2_l5upx"]
 
@@ -15,7 +15,7 @@ albedo_color = Color(0.0984, 0.82, 0.266773, 1)
 
 [node name="Level" type="Node3D"]
 
-[node name="Floor" parent="." instance=ExtResource("1_4vnvx")]
+[node name="Floor" parent="." instance=ExtResource("1_baner")]
 
 [node name="Obstacle" type="CSGBox3D" parent="." groups=["Hazard"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71683, 0)

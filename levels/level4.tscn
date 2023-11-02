@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/LandingPad.gd" id="1_b0uis"]
 [ext_resource type="PackedScene" uid="uid://bg8fjxtlk1ud" path="res://player.tscn" id="2_o463k"]
 [ext_resource type="PackedScene" uid="uid://coko50moxxp84" path="res://moving_hazard.tscn" id="3_5bxmh"]
-[ext_resource type="PackedScene" uid="uid://bwlqwuixwwed8" path="res://Background.tscn" id="4_jh0s3"]
+[ext_resource type="PackedScene" uid="uid://cbe06wgbxkjwy" path="res://Background.tscn" id="4_nqau6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knsgc"]
 albedo_color = Color(0.486275, 0.67451, 0.976471, 1)
@@ -37,4 +37,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.4, 0)
 destination = Vector3(0, 2, 0)
 duration = 3.0
 
-[node name="Floor" parent="." instance=ExtResource("4_jh0s3")]
+[node name="Floor" parent="." instance=ExtResource("4_nqau6")]

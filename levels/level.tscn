@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://becdd71eh2p63"]
 
 [ext_resource type="Script" path="res://levels/LandingPad.gd" id="1_5wcwx"]
-[ext_resource type="PackedScene" uid="uid://bwlqwuixwwed8" path="res://Background.tscn" id="1_j8st4"]
+[ext_resource type="PackedScene" uid="uid://cbe06wgbxkjwy" path="res://Background.tscn" id="1_6qkph"]
 [ext_resource type="PackedScene" uid="uid://bg8fjxtlk1ud" path="res://player.tscn" id="1_mrth7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knsgc"]
@@ -14,7 +14,7 @@ emission_energy_multiplier = 0.5
 
 [node name="Level" type="Node3D"]
 
-[node name="Floor" parent="." instance=ExtResource("1_j8st4")]
+[node name="Floor" parent="." instance=ExtResource("1_6qkph")]
 
 [node name="LaunchPad" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0.2, 0)

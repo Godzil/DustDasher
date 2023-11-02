@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwlqwuixwwed8"]
+[gd_scene load_steps=6 format=3 uid="uid://cbe06wgbxkjwy"]
+
+[ext_resource type="PackedScene" uid="uid://quotb6ulxa4m" path="res://back_bg.glb" id="1_87afc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fgfyb"]
 albedo_color = Color(0.4, 0.269333, 0.176, 1)
@@ -15,26 +17,12 @@ ground_curve = 0.00784583
 sky_material = SubResource("ProceduralSkyMaterial_g7qmc")
 
 [sub_resource type="Environment" id="Environment_fdef2"]
-background_mode = 2
+background_mode = 1
+background_color = Color(0.121569, 0.0745098, 0.0352941, 1)
 sky = SubResource("Sky_oyi2a")
 ambient_light_sky_contribution = 0.19
 tonemap_mode = 2
-glow_enabled = true
 glow_blend_mode = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rtrbf"]
-albedo_color = Color(0.603922, 1, 1, 1)
-emission = Color(0.603922, 1, 1, 1)
-emission_energy_multiplier = 0.01
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtxo6"]
-albedo_color = Color(0.603922, 1, 1, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvdnq"]
-albedo_color = Color(0.447059, 0.647059, 0.435294, 1)
-emission_enabled = true
-emission = Color(0, 0.364706, 0.258824, 1)
-emission_energy_multiplier = 2.21
 
 [node name="Node3D" type="Node3D"]
 
@@ -50,49 +38,60 @@ material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Wall" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(0.977574, -0.210591, 0, 0.210591, 0.977574, 0, 0, 0, 1, -12.1047, 6.97642, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Wall2" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(0.718357, 0.695675, 0, -0.695675, 0.718357, 0, 0, 0, 1, -11.462, 11.7943, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Wall3" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(0.940703, 0.339231, 0, -0.339231, 0.940703, 0, 0, 0, 1, 11.8378, 5.98472, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Wall4" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(0.880651, -0.473765, 0, 0.473765, 0.880651, 0, 0, 0, 1, 12.1778, 12.5866, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Ceilling" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(-0.306127, 0.951991, 0, -0.951991, -0.306127, 0, 0, 0, 1, -6.07843, 15.7483, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Ceilling2" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(-0.273372, 0.961909, 0, -0.961909, -0.273372, 0, 0, 0, 1, 0.932961, 15.0613, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="Ceilling3" type="CSGBox3D" parent="FrontGame"]
 transform = Transform3D(0.383167, 0.923679, 0, -0.923679, 0.383167, 0, 0, 0, 1, 7.76777, 15.4777, 0)
+calculate_tangents = false
 size = Vector3(4, 10, 4)
 material = SubResource("StandardMaterial3D_fgfyb")
 
 [node name="SunLight" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.642788, -0.383022, 0.663414, 0, 0.866025, 0.5, -0.766044, -0.321394, 0.556671, 0, -4, 0)
+visible = false
 light_energy = 0.14
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_fdef2")
 
+[node name="back_bg" parent="." instance=ExtResource("1_87afc")]
+
 [node name="DomeLight" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.72306, 3.0162, -17.5772)
+visible = false
 light_color = Color(1, 0, 0, 1)
 light_energy = 3.5
 shadow_enabled = true
@@ -100,12 +99,14 @@ omni_range = 7.0
 
 [node name="DomeLight2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14508, 2.24992, -17.149)
+visible = false
 light_color = Color(0.156863, 0.427451, 0.0745098, 1)
 light_energy = 1.79
 omni_range = 7.0
 
 [node name="DomeLight3" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9651, 2.139, -13.2236)
+visible = false
 light_color = Color(0, 0, 0.815686, 1)
 light_energy = 1.34
 omni_range = 7.0
@@ -124,127 +125,3 @@ omni_attenuation = 0.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54225, 6.5159, -1.25908)
 omni_range = 12.0
 omni_attenuation = 0.5
-
-[node name="Background" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-calculate_tangents = false
-
-[node name="Background" type="CSGBox3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.44873, -12.5048)
-calculate_tangents = false
-size = Vector3(64, 1, 20)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Dome" type="CSGSphere3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51749, 3.44873, -17.2528)
-calculate_tangents = false
-radius = 3.399
-material = SubResource("StandardMaterial3D_rtrbf")
-
-[node name="Dome2" type="CSGSphere3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.06009, 3.44873, -17.2528)
-calculate_tangents = false
-radius = 2.449
-material = SubResource("StandardMaterial3D_wtxo6")
-
-[node name="Dome3" type="CSGSphere3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.00084, 3.44873, -13.2718)
-calculate_tangents = false
-radius = 2.449
-material = SubResource("StandardMaterial3D_wtxo6")
-
-[node name="Tunnel" type="CSGCylinder3D" parent="Background"]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 2.22966, 4.25086, -17.4368)
-calculate_tangents = false
-height = 6.21107
-material = SubResource("StandardMaterial3D_kvdnq")
-
-[node name="Tunnel2" type="CSGCylinder3D" parent="Background"]
-transform = Transform3D(-2.94098e-08, -0.672819, -0.739807, 1, -4.37114e-08, 0, -3.2338e-08, -0.739807, 0.672819, 8.02019, 4.25086, -14.4894)
-calculate_tangents = false
-height = 6.21107
-material = SubResource("StandardMaterial3D_kvdnq")
-
-[node name="Stone" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.804624, 0.348817, -0.480528, -0.299477, 0.937191, 0.17885, 0.512732, 0, 0.858549, -7.43732, 4.44873, -7.09294)
-calculate_tangents = false
-size = Vector3(4.113, 1.465, 1.755)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Stone2" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.782704, 0.348518, -0.515664, -0.299477, 0.937191, 0.17885, 0.545608, 0.0144427, 0.837916, -5.63329, 4.44873, -7.09294)
-calculate_tangents = false
-size = Vector3(4.113, 1.465, 1.755)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Stone3" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.697973, 0.343002, -0.628636, -0.299477, 0.937191, 0.17885, 0.650497, 0.0634292, 0.756855, -4.1176, 4.44873, -7.09294)
-calculate_tangents = false
-size = Vector3(4.113, 1.465, 1.755)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Stone4" type="CSGBox3D" parent="Background"]
-transform = Transform3D(-0.784862, -0.135402, -0.604697, -0.299477, 0.937191, 0.17885, 0.5425, 0.321465, -0.776115, 8.39051, 4.44873, -7.09294)
-calculate_tangents = false
-size = Vector3(4.113, 1.465, 1.755)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Stone5" type="CSGBox3D" parent="Background"]
-transform = Transform3D(-0.663753, -0.0699903, -0.74467, -0.299477, 0.937191, 0.17885, 0.68538, 0.341723, -0.643023, 6.78322, 4.44873, -7.09294)
-calculate_tangents = false
-size = Vector3(4.113, 1.465, 1.755)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Stone6" type="CSGBox3D" parent="Background"]
-transform = Transform3D(-0.523917, -0.00487024, -0.851756, -0.299477, 0.937191, 0.17885, 0.797387, 0.348783, -0.492468, 5.25694, 4.44873, -7.09294)
-calculate_tangents = false
-size = Vector3(4.113, 1.465, 1.755)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.899298, 0.437336, 0, -0.426464, 0.876943, 0.221583, 0.0969059, -0.199269, 0.975142, -12.1047, 7.5922, -4.81595)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall4" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.870808, -0.457477, -0.180022, 0.481978, 0.866606, 0.129193, 0.0969059, -0.199269, 0.975142, 12.9122, 7.5922, -4.81595)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall2" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.964433, 0.230176, -0.129955, -0.136435, 0.854572, 0.501091, 0.226395, -0.465539, 0.855581, -12.1047, 7.5922, -8.18372)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall3" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.973905, 0.0938263, -0.206652, 0.0159285, 0.88004, 0.474632, 0.226395, -0.465539, 0.855581, -12.1047, 7.5922, -11.9679)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall5" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.947044, 0.31056, -0.0816148, -0.227715, 0.82875, 0.511195, 0.226395, -0.465539, 0.855581, -11.1782, 7.07411, -21.0528)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall6" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.947044, 0.31056, -0.0816148, -0.227715, 0.82875, 0.511195, 0.226395, -0.465539, 0.855581, -8.1745, 4.13209, -21.0528)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall7" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.680525, -0.552843, -0.480886, 0.696873, 0.691114, 0.19165, 0.226395, -0.465539, 0.855581, 12.0678, 7.07411, -21.0528)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
-
-[node name="Wall8" type="CSGBox3D" parent="Background"]
-transform = Transform3D(0.719029, -0.512672, -0.469217, 0.657071, 0.721416, 0.21867, 0.226395, -0.465539, 0.855581, 13.4511, 5.04118, -18.1993)
-calculate_tangents = false
-size = Vector3(4, 10, 4)
-material = SubResource("StandardMaterial3D_fgfyb")
